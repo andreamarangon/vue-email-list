@@ -1,18 +1,27 @@
-console.log('ok');
 var app = new Vue({
   el: '#root',
   data: {
-    email: null
+    mails: []
   },
+  // mounted(){
+  //   const self = this;
+  //   for (var i = 0; i < 10; i++) {
+  //     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+  //      .then(function (result) {
+  //        self.mails.push(result.data.response);
+  //     });
+  //
+  //   }
+  // },
   methods: {
     generaMail: function () {
-      axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-       .then(function (response) {
-         console.log(response.data.response);
-         this.email = response.data.response
-       // const result = response.data;
-      });
-
+      const self = this;
+      for (var i = 0; i < 10; i++) {
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+         .then(function (result) {
+           self.mails.push(result.data.response);
+        });
+      }
     }
   }
 
