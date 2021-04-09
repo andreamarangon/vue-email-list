@@ -8,10 +8,10 @@
 </head>
 <body>
   <div id="root">
-    <ol class="listEmail">
+    <ol v-if="mails.length == 10">
       <li v-for="mail in mails">{{mail}}</li>
     </ol>
-    <button @click="generaMail" >Genera indirizzi email</button>
+    <!-- <button @click="generaMail" >Genera indirizzi email</button> -->
   </div>
 
 
